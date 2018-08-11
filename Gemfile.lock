@@ -59,6 +59,7 @@ GEM
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
     iso-639 (0.2.8)
+    lcsort (0.9.0)
     marc (1.0.2)
       scrub_rb (>= 1.0.1, < 2)
       unf
@@ -141,6 +142,7 @@ DEPENDENCIES
   capistrano-shared_configs
   dlss-capistrano
   http
+  lcsort
   rake
   rspec
   stanford-mods

@@ -42,5 +42,55 @@ RSpec.describe SirsiHolding do
         expect(described_class.new('62 .B862 V.193').with_leading_zeros).to eq '062 .B862 V.193'
       end
     end
+
+    describe 'lopped_callnumber' do
+      context 'with an LC call number' do
+        {
+          'Z7164 .S67 M54 MFILM REEL 42' => 'Z7164 .S67 M54',
+          'Q1 .N2 V.434:NO.7031 2005:MAR.17' => 'Q1 .N2',
+          'Q1 .N2 V.421-426 2003:INDEX' => 'Q1 .N2',
+          'Q1 .N2 V.171 1953:JAN.-MAR.' => 'Q1 .N2',
+          'Z286 .D47 J69 1992:MAR.-DEC.' => 'Z286 .D47 J69 1992',
+          'QD1 .C59 1973:P.1-1252' => 'QD1 .C59 1973',
+          'Q1 .S34 V.209:4452-4460 1980:JUL.-AUG.' => 'Q1 .S34',
+          'Q1 .S34 V.293-294:5536-5543 2001:SEP-OCT' => 'Q1 .S34',
+          'ML1 .I614 INDEX 1969-1986' => 'ML1 .I614',
+          'KD270 .E64 INDEX:A/K' => 'KD270 .E64',
+          'M270 .I854 1999' => 'M270 .I854 1999',
+          'TX519 .D26S 1954 V.2' => 'TX519 .D26S 1954',
+          'QD1 .C59 1975:V.1-742' => 'QD1 .C59 1975'
+        }.each do |call_number, expected|
+          describe "with #{call_number}" do
+            let(:holding) { SirsiHolding.new(call_number: call_number, scheme: 'LC') }
+            specify do
+              expect(holding.lopped_callnumber(false)).to eq expected
+            end
+          end
+        end
+
+        {
+          'Z7164 .S67 M54 MFILM REEL 42' => 'Z7164 .S67 M54',
+          'Q1 .N2 V.434:NO.7031 2005:MAR.17' => 'Q1 .N2',
+          'Q1 .N2 V.421-426 2003:INDEX' => 'Q1 .N2',
+          'Q1 .N2 V.171 1953:JAN.-MAR.' => 'Q1 .N2',
+          'Z286 .D47 J69 1992:MAR.-DEC.' => 'Z286 .D47 J69',
+          'QD1 .C59 1973:P.1-1252' => 'QD1 .C59',
+          'Q1 .S34 V.209:4452-4460 1980:JUL.-AUG.' => 'Q1 .S34',
+          'Q1 .S34 V.293-294:5536-5543 2001:SEP-OCT' => 'Q1 .S34',
+          'ML1 .I614 INDEX 1969-1986' => 'ML1 .I614',
+          'KD270 .E64 INDEX:A/K' => 'KD270 .E64',
+          'M270 .I854 1999' => 'M270 .I854',
+          'TX519 .D26S 1954 V.2' => 'TX519 .D26S',
+          'QD1 .C59 1975:V.1-742' => 'QD1 .C59'
+        }.each do |call_number, expected|
+          describe "with #{call_number}, but a serial" do
+            let(:holding) { SirsiHolding.new(call_number: call_number, scheme: 'LC') }
+            specify do
+              expect(holding.lopped_callnumber(true)).to eq expected
+            end
+          end
+        end
+      end
+    end
   end
 end

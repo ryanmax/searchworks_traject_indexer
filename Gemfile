@@ -9,6 +9,7 @@ group :development, :test do
 end
 
 gem 'http'
+gem 'lcsort'
 gem 'rake'
 gem 'stanford-mods'
 
