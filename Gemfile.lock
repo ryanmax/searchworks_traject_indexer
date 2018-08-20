@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/mejackreed/traject
-  revision: 616a7b02016294f684cc577996be44250b964e6d
+  revision: 6c29e60368fff0c5b42cb6284019a166dd4dfe90
   branch: full-backtrace
   specs:
     traject (3.0.0.alpha.1)
@@ -100,7 +100,7 @@ GEM
       activesupport (>= 3.2.18)
       i18n
       nokogiri
-    public_suffix (3.0.2)
+    public_suffix (3.0.3)
     rake (12.3.1)
     rspec (3.8.0)
       rspec-core (~> 3.8.0)
