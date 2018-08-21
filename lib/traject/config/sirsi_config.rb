@@ -25,6 +25,7 @@ settings do
   provide "reader_class_name", "Traject::MarcCombiningReader"
   provide 'reserves_file', ENV['RESERVES_FILE']
   provide 'allow_duplicate_values',  false
+  provide 'solr_json_writer.skippable_exceptions', ['StandardError']
 end
 
 # Change the XMLNS to match how solrmarc handles this

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/mejackreed/traject
-  revision: 6c29e60368fff0c5b42cb6284019a166dd4dfe90
-  branch: full-backtrace
+  revision: 8bccc28d17183508d585d5315a8822603f45f4b4
+  branch: rescue-others
   specs:
     traject (3.0.0.alpha.1)
       concurrent-ruby (>= 0.8.0)

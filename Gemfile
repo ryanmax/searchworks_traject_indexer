@@ -1,6 +1,6 @@
 source 'https://rubygems.org', engine: 'jruby', engine_version: '9.2.0.0'
 
-gem 'traject', git: 'https://github.com/mejackreed/traject', branch: 'full-backtrace'
+gem 'traject', git: 'https://github.com/mejackreed/traject', branch: 'rescue-others'
 gem 'traject-marc4j_reader', platform: :jruby
 
 group :development, :test do
