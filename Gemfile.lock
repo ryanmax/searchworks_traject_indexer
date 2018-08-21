@@ -1,3 +1,20 @@
+GIT
+  remote: https://github.com/traject/traject
+  revision: 70890a6a2b6a173ed67ab710b009e0abb82ee2e6
+  ref: 70890a6a2b6a173ed67ab710b009e0abb82ee2e6
+  specs:
+    traject (3.0.0.alpha.1)
+      concurrent-ruby (>= 0.8.0)
+      dot-properties (>= 0.1.1)
+      hashie (~> 3.1)
+      http (~> 3.0)
+      httpclient (~> 2.5)
+      marc (~> 1.0)
+      marc-fastxmlwriter (~> 1.0)
+      nokogiri (~> 1.0)
+      slop (>= 3.4.5, < 4.0)
+      yell
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -112,17 +129,6 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
-    traject (3.0.0.alpha.1)
-      concurrent-ruby (>= 0.8.0)
-      dot-properties (>= 0.1.1)
-      hashie (~> 3.1)
-      http (~> 3.0)
-      httpclient (~> 2.5)
-      marc (~> 1.0)
-      marc-fastxmlwriter (~> 1.0)
-      nokogiri (~> 1.0)
-      slop (>= 3.4.5, < 4.0)
-      yell
     traject-marc4j_reader (1.0.2-java)
       marc (~> 1.0)
       marc-marc4j (~> 1.0)
@@ -151,7 +157,7 @@ DEPENDENCIES
   rake
   rspec
   stanford-mods
-  traject (~> 3.0a)
+  traject!
   traject-marc4j_reader
 
 BUNDLED WITH
