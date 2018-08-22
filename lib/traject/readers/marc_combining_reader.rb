@@ -1,3 +1,5 @@
+# require 'traject-marc4j_reader'
+
 class CombiningEnumerable
   def initialize(left, right)
     @left = left
@@ -17,7 +19,7 @@ class Traject::MarcCombiningReader
   attr_reader :settings, :input_stream, :marc_reader
 
   def initialize(input_stream, settings)
-    @marc_reader = Traject::MarcReader.new(input_stream, settings)
+    @marc_reader = Traject::Marc4JReader.new(input_stream, settings)
   end
 
   def each

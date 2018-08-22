@@ -1,6 +1,7 @@
 $LOAD_PATH << File.expand_path('../..', __dir__)
 
 require 'traject'
+require 'traject/marc4j_reader'
 require 'traject/macros/marc21_semantics'
 require 'traject/readers/marc_combining_reader'
 require 'sirsi_holding'
@@ -27,6 +28,7 @@ settings do
   provide 'allow_duplicate_values',  false
   provide 'skip_empty_item_display', ENV['SKIP_EMPTY_ITEM_DISPLAY'].to_i
   provide 'solr_json_writer.skippable_exceptions', [StandardError]
+  provide "marc4j_reader.permissive", true
 end
 
 # Change the XMLNS to match how solrmarc handles this
