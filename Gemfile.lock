@@ -15,6 +15,15 @@ GIT
       slop (>= 3.4.5, < 4.0)
       yell
 
+GIT
+  remote: https://github.com/traject/traject-marc4j_reader
+  revision: ff86340114e7fa03a82b6bccaa27e60ca3e5ddb0
+  branch: master
+  specs:
+    traject-marc4j_reader (1.0.2-java)
+      marc (~> 1.0)
+      marc-marc4j (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -129,9 +138,6 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     thread_safe (0.3.6-java)
-    traject-marc4j_reader (1.0.2-java)
-      marc (~> 1.0)
-      marc-marc4j (~> 1.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unf (0.1.4)
@@ -158,7 +164,7 @@ DEPENDENCIES
   rspec
   stanford-mods
   traject!
-  traject-marc4j_reader
+  traject-marc4j_reader!
 
 BUNDLED WITH
    1.16.3
